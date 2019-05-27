@@ -1,12 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import {Provider} from 'react-redux'
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import StoreGlobal from './reducers/driver'
+ReactDOM.render(
+  <Provider store={StoreGlobal}>
+    <App />
+  </Provider>
+  , document.getElementById('root')
+);
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// store.dispatch({
+//   type:'add',
+//   payload:1300
+// })
+// store.dispatch({
+//    type:'minus',
+//    payload:199
+// })
+// store.dispatch({
+//   type:'add',
+//   payload:5500
+// })
+// store.dispatch({
+//   type:'chgName',
+//   payload:'bank 2019'
+// })
+// store.dispatch({
+//   type:'chgAge',
+//   payload:25.5
+// })
